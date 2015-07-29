@@ -51,7 +51,7 @@ $view->addExtension(new \Slim\Views\TwigExtension(
 ));
 // Uncomment the following if you wish to use Twig dump function
 // Note that Twig must also be initialized with debug = true (above)
-$view->addExtension(new Twig_Extension_Debug());
+//$view->addExtension(new Twig_Extension_Debug());
 
 // Register Twig View helper
 $container->register($view);
