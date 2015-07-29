@@ -1,0 +1,24 @@
+{
+    "name": "madmx5/html-tag-viewer",
+    "description": "An HTML document and tag viewer for the web",
+    "type": "project",
+    "require": {
+        "slim/slim": "^3.0@beta",
+        "slim/twig-view": "^1.2",
+        "monolog/monolog": "^1.15",
+        "guzzlehttp/guzzle": "^6.0",
+        "slim/flash": "dev-master",
+        "slim/csrf": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Todd Wirth",
+            "email": "madmx5@phyberoptiks.net"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/src"
+        }
+    }
+}
