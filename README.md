@@ -19,4 +19,5 @@ html-tag-browser is a work in progress, I would like to add the following featur
 
 * Caching and rate limiting for PHP backend to prevent Denial of Service attacks
 * Full HTML source syntax highlighting including tag elements
-* Tag highlighting using web workers to offload browser load on larger HTML sources
+* Implement tag highlighting using webworkers to offload browser load when displaying larger HTML sources
+* Add HTML source tidy service
