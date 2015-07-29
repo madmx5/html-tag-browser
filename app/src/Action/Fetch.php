@@ -19,6 +19,23 @@ class Fetch extends ServicesDependantAction
                 $this->service['router']->pathFor('home'));
         }
 
+        // Make sure we suppor the URL scheme
+        $scheme = parse_url($data['q'], PHP_URL_SCHEME);
+
+        if ( ! in_array($scheme, ['http', 'https'])) {
+           if (empty($scheme)) {
+               // Attempt a resonable default if the user failed to provide http://
+               $data['q'] = 'http://' . $data['q'];
+           }
+           else {
+               $this->service['flash']->addMessage('info',
+                   'Sorry, at this time only http:// and https:// URLs are supported!');
+
+               return $response->withStatus(302)->withHeader('Location',
+                   $this->service['router']->pathFor('home'));
+           }
+        }
+
         // Ensure that the input provided is reasonably sane
         $url = filter_var($data['q'], FILTER_VALIDATE_URL);
 
